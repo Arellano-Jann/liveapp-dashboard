@@ -1,0 +1,14 @@
+<.header>
+  My Dashboard
+  <:subtitle>Total Number of Posts: <%= length(@streams.posts)%></:subtitle>
+</.header>
+
+  Actions:
+
+  <.link patch={~p"/posts"} phx-click={JS.push_focus()}>
+    <.button>List All Posts</.button>
+  </.link>
+
+  <.link patch={~p"/posts/new"} phx-click={JS.push_focus()}>
+    <.button>Create a new post</.button>
+  </.link>

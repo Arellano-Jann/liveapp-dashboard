@@ -1,4 +1,5 @@
 defmodule LiveappWeb.Router do
+  # alias LiveappWeb.PageController
   use LiveappWeb, :router
 
   pipeline :browser do
@@ -23,7 +24,8 @@ defmodule LiveappWeb.Router do
     live "/posts/:id", PostLive.Show, :show
     live "/posts/:id/show/edit", PostLive.Show, :edit
     live "/simple", Simple
-    get "/", PageController, :home
+    # get "/", PageController, :home
+    live "/", PostLive.Dashboard
 
   end
 
