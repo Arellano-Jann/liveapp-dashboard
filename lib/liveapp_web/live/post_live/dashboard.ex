@@ -17,11 +17,10 @@ defmodule LiveappWeb.PostLive.Dashboard do
     IO.inspect(params, pretty: true, label: "Params in handle params")
     {:noreply,
       socket
-      |> assign(:posts, length(Timeline.list_posts()))}
+      |> assign(:posts, length(Timeline.list_posts()))
+    }
     # {:noreply, apply_action(socket, socket.assigns.live_action, params)}
   end
-
-  # def apply_action(socket, )
 
   # defp apply_action(socket, :new, _params) do
   #   socket
