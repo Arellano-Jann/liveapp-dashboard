@@ -1,18 +1,32 @@
 <.header>
   My Dashboard
   <:subtitle>Total Number of Posts: <%= @posts %></:subtitle>
-
+  
   Actions:
-<:actions>
-  <.link patch={~p"/posts"} phx-click={JS.push_focus()}>
-    <.button>List All Posts</.button>
-  </.link>
-</:actions>
-
-<:actions>
-    <.link patch={~p"/posts/new"}>
-      <.button>New Post</.button>
+  <:actions>
+    <.link navigate={~p"/posts"}>
+      <.button>List All Posts</.button>
     </.link>
-</:actions>
+  </:actions>
+
+  <:actions>
+      <.link navigate={~p"/posts/new"}>
+        <.button>New Post</.button>
+      </.link>
+  </:actions>
 </.header>
 
+<%!-- <.p>
+  Actions:
+  <:actions>
+    <.link patch={~p"/posts"} phx-click={JS.push_focus()}>
+      <.button>List All Posts</.button>
+    </.link>
+  </:actions>
+
+  <:actions>
+      <.link patch={~p"/posts/new"}>
+        <.button>New Post</.button>
+      </.link>
+  </:actions>
+</.p> --%>

@@ -34,16 +34,16 @@ defmodule LiveappWeb.PostLive.Dashboard do
   #   |> assign(:post, nil)
   # end
 
-  @impl true
-  def handle_info({LiveappWeb.PostLive.FormComponent, {:saved, post}}, socket) do
-    {:noreply, stream_insert(socket, :posts, post)}
-  end
+#   @impl true
+#   def handle_info({LiveappWeb.PostLive.FormComponent, {:saved, post}}, socket) do
+#     {:noreply, stream_insert(socket, :posts, post)}
+#   end
 
-  @impl true
-  def handle_event("delete", %{"id" => id}, socket) do
-    post = Timeline.get_post!(id)
-    {:ok, _} = Timeline.delete_post(post)
+#   @impl true
+#   def handle_event("delete", %{"id" => id}, socket) do
+#     post = Timeline.get_post!(id)
+#     {:ok, _} = Timeline.delete_post(post)
 
-    {:noreply, stream_delete(socket, :posts, post)}
-  end
+#     {:noreply, stream_delete(socket, :posts, post)}
+#   end
 end
